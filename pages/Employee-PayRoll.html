@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Use Case 1 : adding logo and and font while taking path from assets and css folder-->>
+
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,22 @@
 <body>
     <header class="header-content header">
         <div class="logo-content">
-            <img src="../assets/logo.png" alt="">
+            <img src="../assets/logo.png" width="60px" alt="logo">
             <div>
                 <span class="emp-text">Employee</span><br>
             </div>
         </div>
     </header>
 </body>
+<div class="form-content">
+    <form class="form" action="#" onsubmit="save();return false"></form>
+    <div class="form-head">
+        Employee Payroll form
+    </div>
+    <div class="row-content">
+        <label class="label text" for="name">Name</label>
+        <input class="input" type="text" id="name" name="name" placeholder="your name.." required>
+    </div>
+</div>
 
 </html>
