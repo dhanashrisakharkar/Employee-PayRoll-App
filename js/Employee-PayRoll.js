@@ -24,15 +24,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     });
 });
-
 const save = () => {
-        try {
-            let employeePayrollData = createEmployeePayroll();
-        } catch (e) {
-            return;
-        }
+    try {
+        let employeePayrollData = createEmployeePayroll();
+        createAndUpdateStorage(employeePayrollData)
+    } catch (e) {
+        return;
     }
-    //Use Case 11
+}
+
+//Use Case 11
 const createEmployeePayroll = () => {
     let employeePayrollData = new EmployeePayrollData();
     try {
@@ -41,11 +42,12 @@ const createEmployeePayroll = () => {
         setTextValue('.text-error', e);
         throw e;
     }
+    employeePayrollData.id = getSelectedValues('[name = id')
     employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
     employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
     employeePayrollData.department = getSelectedValues('[name=department]').pop();
     employeePayrollData.salary = getInputValueById('#salary');
-    employeePayrollData.notes = getInputValueById('#notes').pop();
+    employeePayrollData.salary = getInputValueById('#notes').pop();
     let date = getInputValueById('#day') + " " + getInputValueById('#month') + " " + getInputValueById('#year');
     employeePayrollData.date = Date.parse(data);
     alert(employeePayrollData.toString());
@@ -67,27 +69,48 @@ const getInputValueById = (id) => {
     return value;
 }
 
-const getInputElementValue = (id) => {
-        let value = document.getElementById(id).value;
-        return value;
-    }
-    //Use Case 12
-const save = () => {
-    try {
-        let employeePayrollData = createEmployeePayroll();
-        createAndUpdateStorage(employeePayrollData)
-    } catch (e) {
-        return;
-    }
-}
+// const getInputElementValue = (id) => {
+//         let value = document.getElementById(id).value;
+//         return value;
+//     }
+//Use Case 12
 
-function createAndUpdateStorage(employeePayrollData) {
+
+function createAndUpdateStorage(employee) {
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
     if (employeePayrollList != undefined) {
-        employeePayrollList.push(employeePayrollData);
+        employeePayrollList.push(employee);
     } else {
-        employeePayrollList = [employeePayrollData]
+        employeePayrollList = [employee]
     }
     alert(employeePayrollList.toString());
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
+}
+
+//Use Case 13
+const resetForm = () => {
+    setValue('#name', '');
+    unsetSelctedValues('[name=profile]');
+    unsetSelctedValues('[name=gender]');
+    unsetSelctedValues('[name=department]');
+    setValue('#salary', '');
+    setValue('#notes', '');
+    setValue('#day', '1');
+    setValue('#month', 'january');
+    setValue('#year', '2020');
+}
+
+const unsetSelctedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    allItems.forEach(item => {
+        item.checked = false;
+    });
+}
+const setTextValue = (id, value) => {
+    const element = document.querySelectorAll(id);
+    element.textContent = value;
+}
+const setValue = (id, value) => {
+    const element = document.querySelectorAll(id);
+    element.value = value;
 }
