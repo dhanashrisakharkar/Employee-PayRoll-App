@@ -87,7 +87,6 @@
                 <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
                 <output class="salary-output text" for="salary">400000</output>
             </div>
-            <!--Use Case :-4-->
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date</label>
                 <div>
@@ -147,10 +146,20 @@
                     </select>
                 </div>
             </div>
+            <div class="row-content">
+                <label class="label text" for="notes">Notes</label>
+                <textarea id="notes" class="input" name="Notes" placeholder="" style="height: 100px;"></textarea>
+            </div>
+            <div class="buttonParent">
+                <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
+                <div class="Submit-reset">
+                    <button type="submit" class="button submitButton" id="submitButton">submit</button>
+                    <button type="reset" class="resetButton button">Reset</button>
+                </div>
+            </div>
         </form>
         <script src="../js/Employee-PayRoll.js">
         </script>
-
     </div>
 
 </body>
