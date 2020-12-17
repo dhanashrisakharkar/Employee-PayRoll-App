@@ -1,6 +1,6 @@
 //Use case 10
 window.addEventListener('DOMContentLoaded', (event) => {
-    const name = document.querySelector('#text');
+    const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
     name.addEventListener('input', function() {
         if (name.value.length == 0) {
@@ -24,3 +24,50 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     });
 });
+
+const save = () => {
+        try {
+            let employeePayrollData = createEmployeePayroll();
+        } catch (e) {
+            return;
+        }
+    }
+    //Use Case 11
+const createEmployeePayroll = () => {
+    let employeePayrollData = new EmployeePayrollData();
+    try {
+        employeePayrollData.name = getInputValueById('#name')
+    } catch (e) {
+        setTextValue('.text-error', e);
+        throw e;
+    }
+    employeePayrollData.profilePic = getSelectedValues('[name=profile]').pop();
+    employeePayrollData.gender = getSelectedValues('[name=gender]').pop();
+    employeePayrollData.department = getSelectedValues('[name=department]').pop();
+    employeePayrollData.salary = getInputValueById('#salary');
+    employeePayrollData.notes = getInputValueById('#notes').pop();
+    let date = getInputValueById('#day') + " " + getInputValueById('#month') + " " + getInputValueById('#year');
+    employeePayrollData.date = Date.parse(data);
+    alert(employeePayrollData.toString());
+    return employeePayrollData;
+
+}
+const getSelectedValues = (propertyValue) => {
+    let allItems = document.querySelectorAll(propertyValue);
+    let selItems = [];
+    allItems.forEach(item => {
+        if (item.checked) selItems.push(item.value)
+    });
+    return selItems;
+
+}
+
+const getInputValueById = (id) => {
+    let value = document.querySelector(id).value;
+    return value;
+}
+
+const getInputElementValue = (id) => {
+    let value = document.getElementById(id).value;
+    return value;
+}
