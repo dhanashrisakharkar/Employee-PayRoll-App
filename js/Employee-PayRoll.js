@@ -1,5 +1,6 @@
+//Use case 10
 window.addEventListener('DOMContentLoaded', (event) => {
-    const name = document.querySelector('#name')
+    const name = document.querySelector('#text');
     const textError = document.querySelector('.text-error');
     name.addEventListener('input', function() {
         if (name.value.length == 0) {
@@ -7,8 +8,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         try {
-            (new EmployeePayrollData()).name = name.value;;
-            textError.textContent = ""
+            (new EmployeePayrollData()).name = name.value;
+            textError.textContent = "";
         } catch (e) {
             textError.textContent = e;
         }
