@@ -29,8 +29,8 @@
             </div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
-                <input class="input" type="name" id="name" name="name" placeholder="your name.." required>
-                <error-output class="name-error" for="name"></error-output>
+                <input class="input" type="text" id="name" name="name" placeholder="your name.." required>
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <!--Uc 3-->
             <div class="row-content">
@@ -146,7 +146,6 @@
                     </select>
                 </div>
             </div>
-            <!--Use Case 6-7-->
             <div class="row-content">
                 <label class="label text" for="notes">Notes</label>
                 <textarea id="notes" class="input" name="Notes" placeholder="" style="height: 100px;"></textarea>
@@ -159,15 +158,10 @@
                 </div>
             </div>
         </form>
-        <script>
-            const salary = document.querySelector('#salary');
-            const output = document.querySelector('.salary-output');
-            output.textContent = salary.value;
-            salary.addEventListener('input', function() {
-                output.textContent = salary.value;
-            });
-        </script>
+        <script src="../js/Payroll-GetSet.js"></script>
+        <script src="../js/Employee-PayRoll.js"></script>
     </div>
+
 </body>
 
 </html>
