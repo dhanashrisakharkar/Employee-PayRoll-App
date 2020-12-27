@@ -1,0 +1,53 @@
+{
+  "EmployeePayrollDB": [
+    {
+      "id": 1,
+      "_name": "Dhanashri Sakharkar",
+      "_gender": "Female",
+      "_department": [
+        "Sales"
+      ],
+      "_salary": "462700",
+      "_startDate": "14 Dec 2020",
+      "_note": "",
+      "_profilePic": "../assets/profile-images/Ellipse -1.png",
+      "_notes": "undefined"
+    },
+    {
+      "id": 2,
+      "_name": "abhishek",
+      "_gender": "female",
+      "_department": [
+        "Sales"
+      ],
+      "_salary": "400000",
+      "_startDate": "29 Oct 2019",
+      "_note": "",
+      "_profilePic": "../assets/profile-images/Ellipse -1.png"
+    },
+    {
+      "id": 5,
+      "_name": "Shubham",
+      "_gender": "male",
+      "_department": [
+        "Sales"
+      ],
+      "_salary": "400000",
+      "_startDate": "29 Oct 2019",
+      "_note": "",
+      "_profilePic": "../assets/profile-images/Ellipse -2.png"
+    },
+    {
+      "_name": "Dhanashri Sak",
+      "_profilePic": "../assets/profile-images/Ellipse -1.png",
+      "_gender": "Female",
+      "_department": [
+        "Others"
+      ],
+      "_salary": "400000",
+      "_notes": "pk",
+      "_startDate": "1 Dec 2020",
+      "id": 6
+    }
+  ]
+}
